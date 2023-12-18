@@ -1,2 +1,2 @@
 # ShtafunSoft_TestTask
- Image resize test tasl
+ Image resize test task
