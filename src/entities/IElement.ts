@@ -1,7 +1,6 @@
 export interface IElement {
-    elements: IElement[];
-    width: number;
-    height: number;
-    add(element: IElement) : IElement;
     getWidth(): number;
+    getHeight(): number;
+    setWidth(value: number): void;
+    setHeight(value: number): void;
 }
