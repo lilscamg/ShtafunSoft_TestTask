@@ -18,9 +18,7 @@ export class Column {
     getHeight() {
         let height = 0;
         this.elements.forEach(el => {
-            let elHeight = el.getHeight();
-            elHeight > height;
-            height = elHeight;
+            height += el.getHeight();
         });
         return height;
     }

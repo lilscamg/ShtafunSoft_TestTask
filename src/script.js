@@ -49,7 +49,7 @@ function drawStoryBoard1(head, params) {
     draw(head, params.container);
 }
 
-function drawStoryBoard(head, params) {
+/* function drawStoryBoard(head, params) {
     // если узел - фото
     if (head instanceof Img) {
         if (head.getWidth() >= params.width)
@@ -76,6 +76,26 @@ function drawStoryBoard(head, params) {
             }
         })
         return maxHeight;
+    }
+} */
+
+function drawStoryBoard(head, params) {
+    // если узел - фото
+    if (head instanceof Img) {
+        if (head.getWidth() >= params.width)
+            head.setWidth(params.width);
+        return head.getHeight();
+    }
+    else if (head instanceof Row) {
+        let maxHeight = 0;
+        head.elements.forEach(el => {
+            let newHeight = drawStoryBoard(el, { width: (params.width / head.elements.length) });
+            maxHeight += newHeight > maxHeight ? newHeight : 0;
+            return maxHeight;
+        })
+    }
+    else if (head instanceof Column) {
+
     }
 }
 
@@ -122,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
 
             //#region Задание 2
-            let r2 = new Row();
+            /*let r2 = new Row();
             let c1 = new Column();
             c1.add(img2).add(img3);
             let c2 = new Column();
@@ -130,7 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
             r2.add(img1).add(c1).add(c2).add(img6);
             drawStoryBoard(r2, {width: 666, container: _row2});
             console.log(r2);
-            draw(r2, _row2);
+            draw(r2, _row2);*/
             //#endregion
 
 

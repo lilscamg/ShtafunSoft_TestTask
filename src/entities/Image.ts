@@ -7,11 +7,15 @@ export class Img implements IElement {
         this.domElement = domElement;
     }
     getWidth(): number {
-        return this.domElement.width;
+         return this.domElement.width;
+        // let width = Number(this.domElement.style.width.replace('px', ''));
+        // return width
     }
 
     getHeight(): number {
         return this.domElement.height;
+        // let height = Number(this.domElement.style.height.replace('px', ''));
+        // return height
     }
 
     setHeight(height: number): void {
